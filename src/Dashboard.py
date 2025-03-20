@@ -18,11 +18,6 @@ def show_dashboard():
     st.line_chart(perf_df)
 
     composition_df = pd.read_sql("SELECT Date, Symbol, MarketCap FROM stocks", conn)
-    # market_cap_df = pd.read_sql("SELECT Date, Symbol, MarketCap FROM stocks", conn)
-    # historical_prices_df = pd.read_sql("SELECT * FROM historical_prices", conn)
-    # historical_prices_df.rename(columns={"Ticker": "Symbol"}, inplace=True)
-
-    # composition_df = pd.merge(market_cap_df, historical_prices_df, on=['Date', 'Symbol'], how="right")
 
     # Ensure Date column is in datetime format
     composition_df["Date"] = pd.to_datetime(composition_df["Date"] ,errors="coerce")
