@@ -12,7 +12,7 @@ pd.set_option('display.width', 1000)  # Prevent line breaks
 pd.set_option('display.max_colwidth', None)  # Show full content in each cell
 
 # Your Twelve Data API Key
-TWELVE_API_KEY = "b85e88a8e57c498ebbfee64d26524d53"
+TWELVE_API_KEY = "<<API KEY>>"
 
 # SQLite Database Path
 DB_PATH = "../data/stock_data.sqlite"
