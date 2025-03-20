@@ -168,24 +168,24 @@ def orchestrator():
     # Step 4: Fetch Market Cap Data
     print("📊 Fetching market cap data...")
     ticker_list = result_tickers['symbol'].tolist()
-    # ticker_list = ["AAPL", "MSFT", "GOOGL"]
-    ticker_list = [
-        "AAPL", "MSFT", "GOOGL", "AMZN", "TSLA", "META", "NVDA", "BRK-B", "JPM", "V",
-        "UNH", "JNJ", "PG", "HD", "MA", "DIS", "PYPL", "NFLX", "ADBE", "PFE",
-        "KO", "MRNA", "PEP", "CRM", "TMO", "ABT", "BMY", "NKE", "XOM", "T",
-        "COST", "LLY", "MCD", "HON", "IBM", "GS", "TXN", "ORCL", "CVX", "QCOM",
-        "AMGN", "INTC", "MDT", "LMT", "NOW", "DHR", "UNP", "SBUX", "ISRG", "AVGO",
-        "LOW", "DOW", "BLK", "AMD", "CAT", "ZTS", "RTX", "CVS", "MO", "SPGI",
-        "MMM", "BA", "C", "TGT", "CSCO", "GE", "USB", "GILD", "FDX", "PGR",
-        "MET", "ADP", "SO", "SCHW", "DUK", "BDX", "LRCX", "AON", "ATVI", "NSC",
-        "CCI", "AEP", "ITW", "PLD", "TJX", "ICE", "FIS", "EQIX", "WM", "CL",
-        "VRTX", "APD", "REGN", "AIG", "EOG", "MS", "HCA", "COP", "MMC", "FISV"
-    ]
+  
+    # ticker_list = [
+    #     "AAPL", "MSFT", "GOOGL", "AMZN", "TSLA", "META", "NVDA", "BRK-B", "JPM", "V",
+    #     "UNH", "JNJ", "PG", "HD", "MA", "DIS", "PYPL", "NFLX", "ADBE", "PFE",
+    #     "KO", "MRNA", "PEP", "CRM", "TMO", "ABT", "BMY", "NKE", "XOM", "T",
+    #     "COST", "LLY", "MCD", "HON", "IBM", "GS", "TXN", "ORCL", "CVX", "QCOM",
+    #     "AMGN", "INTC", "MDT", "LMT", "NOW", "DHR", "UNP", "SBUX", "ISRG", "AVGO",
+    #     "LOW", "DOW", "BLK", "AMD", "CAT", "ZTS", "RTX", "CVS", "MO", "SPGI",
+    #     "MMM", "BA", "C", "TGT", "CSCO", "GE", "USB", "GILD", "FDX", "PGR",
+    #     "MET", "ADP", "SO", "SCHW", "DUK", "BDX", "LRCX", "AON", "ATVI", "NSC",
+    #     "CCI", "AEP", "ITW", "PLD", "TJX", "ICE", "FIS", "EQIX", "WM", "CL",
+    #     "VRTX", "APD", "REGN", "AIG", "EOG", "MS", "HCA", "COP", "MMC", "FISV"
+    # ]
     df_market_cap = get_market_cap(ticker_list)
     df_market_cap.drop_duplicates(inplace=True)
 
     # Step 5: Store Market Cap Data in Database
-    # update_market_cap_data(df_market_cap, conn)
+    update_market_cap_data(df_market_cap, conn)
 
     # Step 6: Fetch Historical Stock Data
     print("📈 Fetching historical stock data...")
