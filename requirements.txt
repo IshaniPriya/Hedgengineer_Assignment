@@ -1,0 +1,10 @@
+pandas
+numpy
+yfinance
+requests
+sqlite3
+streamlit
+matplotlib
+openpyxl
+fpdf
+twelvedata
